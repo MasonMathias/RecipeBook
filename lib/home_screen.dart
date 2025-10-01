@@ -1,0 +1,20 @@
+import 'package:flutter/material.dart';
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Home')),
+      body: ListView(
+        children: [
+          ListTile(
+            title: const Text('Go to Details'),
+            onTap: () => Navigator.pushNamed(context, '/details'),
+          ),
+        ],
+      ),
+    );
+  }
+}
