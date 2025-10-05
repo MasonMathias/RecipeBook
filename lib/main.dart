@@ -6,13 +6,19 @@ void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       initialRoute: '/',
-      routes: {
-        '/': (_) => const HomeScreen(),
-        '/details': (_) => const DetailsScreen(),
+      onGenerateRoute: (settings) {
+        if (settings.name == '/details') {
+          final args = settings.arguments as Map<String, String>;
+          return MaterialPageRoute(
+            builder: (_) => DetailsScreen(id: args['id']!, title: args['title']!),
+          );
+        }
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
       },
     );
   }
