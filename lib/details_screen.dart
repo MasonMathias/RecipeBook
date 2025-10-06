@@ -107,28 +107,28 @@ class _SectionHeader extends StatelessWidget {
 }
 
 List<Widget> _bullets(List<String> items) => items
-    .map((t) => Padding(
-          padding: const EdgeInsets.only(bottom: 6),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text('• '),
-              Expanded(child: Text(t)),
-            ],
-          ),
-        ))
-    .toList();
+.map((t) => Padding(
+      padding: const EdgeInsets.only(bottom: 6),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text('• '),
+          Expanded(child: Text(t)),
+        ],
+      ),
+    ))
+.toList();
 
 List<Widget> _numbered(List<String> items) => [
-      for (int i = 0; i < items.length; i++)
-        Padding(
-          padding: const EdgeInsets.only(bottom: 6),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('${i + 1}. '),
-              Expanded(child: Text(items[i])),
-            ],
-          ),
-        )
-    ];
+  for (int i = 0; i < items.length; i++)
+    Padding(
+      padding: const EdgeInsets.only(bottom: 6),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('${i + 1}. '),
+          Expanded(child: Text(items[i])),
+        ],
+      ),
+    )
+];
